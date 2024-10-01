@@ -1,0 +1,21 @@
+https://text-to-speech.imtranslator.net/
+https://lighthouseonline.com/blog-en/why-do-we-need-translation/
+mtranslate
+https://www.indiamart.com/proddetail/mtranslate-translation-tool-for-global-sap-implementations-4405105362.html
+
+https://kili-technology.com/blog/what-is-text-annotation-in-machine-learning
+https://nevonprojects.com/text-to-speech-project/
+https://techvidvan.com/tutorials/python-language-translator/
+https://text-to-speech.imtranslator.net/
+
+https://davidrickert.com/is-annotating-necessary/
+https://www.pluralsight.com/guides/natural-language-processing-named-entity-recognition
+
+data annotation
+https://blog.jcharistech.com/2020/07/09/simple-nlp-app-with-spacy-streamlit/
+
+https://www.machinelearningplus.com/nlp/text-summarization-approaches-nlp-example/
+
+buildpack
+https://github.com/heroku/heroku-buildpack-apt
+https://github.com/matteotiziano/heroku-buildpack-tesseract
