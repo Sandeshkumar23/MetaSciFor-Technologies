@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Room</title>
+</head>
+<body>
+    <h1>Book Room in {{ hotel.name }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="customer_name">Your Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+        <label for="check_in_date">Check-in Date:</label>
+        <input type="date" id="check_in_date" name="check_in_date" required>
+        <label for="check_out_date">Check-out Date:</label>
+        <input type="date" id="check_out_date" name="check_out_date" required>
+        <button type="submit">Confirm Booking</button>
+    </form>
+</body>
+</html>

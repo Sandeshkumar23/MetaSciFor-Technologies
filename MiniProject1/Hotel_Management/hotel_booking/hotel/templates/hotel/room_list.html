@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rooms in {{ hotel.name }}</title>
+</head>
+<body>
+    <h1>Available Rooms in {{ hotel.name }}</h1>
+    <ul>
+        {% for room in rooms %}
+            <li>
+                Room {{ room.room_number }} ({{ room.room_type }}): ${{ room.price }}
+                <form method="POST" action="{% url 'book_room' room.id %}">
+                    {% csrf_token %}
+                    <label for="customer_name">Your Name:</label>
+                    <input type="text" id="customer_name" name="customer_name" required>
+                    <label for="check_in_date">Check-in Date:</label>
+                    <input type="date" id="check_in_date" name="check_in_date" required>
+                    <label for="check_out_date">Check-out Date:</label>
+                    <input type="date" id="check_out_date" name="check_out_date" required>
+                    <button type="submit">Book Now</button>
+                </form>
+                <a href="{% url 'add_to_cart' room.id %}">Add to Cart</a>
+            </li>
+        {% empty %}
+            <li>No rooms available.</li>
+        {% endfor %}
+    </ul>
+    <br><br><hr>
+    <a style="align-items: center;" href="{% url 'hotel_list' %}">back</a>
+
+</body>
+</html>
+
+{% endblock %}
+

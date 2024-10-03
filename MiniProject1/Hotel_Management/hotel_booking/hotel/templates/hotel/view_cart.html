@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for room in cart.rooms.all %}
+            <li>Room {{ room.room_number }} ({{ room.room_type }}): ${{ room.price }}</li>
+        {% empty %}
+            <li>Your cart is empty.</li>
+        {% endfor %}
+    </ul>
+        {% csrf_token %}
+        
+    </form>
+</body>
+</html>
+
+{% endblock %}

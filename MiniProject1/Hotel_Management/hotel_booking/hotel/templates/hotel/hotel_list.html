@@ -1,0 +1,42 @@
+
+
+<!-- hotel_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel List</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+
+    
+
+    <h1 style="text-align: center;"><u>Hotels</u></h1>
+    <form method="GET" action="{% url 'hotel_list' %}" style="text-align: center;">
+        <label for="state">State:</label>
+        <input style="border: 0cap;" type="text" id="state" name="state" placeholder="Enter state" value="{{ request.GET.state }}">
+        
+        <label for="rating">Minimum Rating:</label>
+        <input style="border: 0cap;" type="number" id="rating" name="rating" step="0.1" placeholder="Enter rating" value="{{ request.GET.rating }}">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit">Filter</button>
+    </form>
+    
+    <ul>
+        {% for hotel in hotels %}
+            <li>
+                <h2>{{ hotel.name }} - Rating: {{ hotel.rating }}</h2>
+                <p>{{ hotel.city }}, {{ hotel.state }}</p>
+                <a href="{% url 'room_list' hotel.id %}">View Rooms</a>
+            </li>
+        {% empty %}
+            <li>No hotels available.</li>
+        {% endfor %}
+    
+    {% endblock %}
+    </ul>
+</body>
+</html>
+
+
